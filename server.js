@@ -1,3 +1,12 @@
+var http = require('http');
+
+var server = http.createServer(function(req, res) {
+res.writeHead(200);
+res.end('Hi everybody!');
+});
+server.listen(8080);
+
+/*
 //  OpenShift sample Node application
 var express = require('express'),
     app     = express(),
@@ -123,3 +132,4 @@ app.listen(port, ip);
 console.log('Server running on http://%s:%s', ip, port);
 
 module.exports = app ;
+*/
