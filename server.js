@@ -1,10 +1,11 @@
-var http = require('http');
+var express = require('express');
+var app = express();
 
-var server = http.createServer(function(req, res) {
-res.writeHead(200);
-res.end('Hi everybody!');
+// define routes here..
+
+var server = app.listen(5000, function () {
+    console.log('Node server is running..');
 });
-server.listen(8080);
 
 /*
 //  OpenShift sample Node application
