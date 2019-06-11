@@ -2,8 +2,9 @@ var express = require('express');
 var app = express();
 
 var bodyParser = require("body-parser");
+this.emit('error', new Error("Error!!!"));
 app.use(bodyParser.urlencoded({ extended: false }));
-
+this.emit('error', new Error("Error!!!"));
 app.get('/', function (req, res) {
     res.sendFile('index.html');
 });
@@ -15,8 +16,12 @@ app.post('/submit-student-data', function (req, res) {
 });
 
 var server = app.listen(8080, function () {
+    server.on("error", err=>console.log(err));
     console.log('Node server is running..');
 });
+
+
+
 
 /*
 //  OpenShift sample Node application
