@@ -14,12 +14,16 @@ app.post('/submit-student-data', function (req, res) {
 });
 
 var server = app.listen(8080, function () {
-    server.on("error", err=>console.log(err));
     console.log('Node server is running..');
 });
     this.emit('error', new Error("Error!!!"));
+    server.on("error", err=>console.log(err));
 
-
+// error handling
+app.use(function(err, req, res, next){
+  console.error(err.stack);
+  res.status(500).send('Something bad happened!');
+});
 
 /*
 //  OpenShift sample Node application
