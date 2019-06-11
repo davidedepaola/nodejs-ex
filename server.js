@@ -16,8 +16,7 @@ app.post('/submit-student-data', function (req, res) {
 var server = app.listen(8080, function () {
     console.log('Node server is running..');
 });
-    this.emit('error', new Error("Error!!!"));
-    server.on("error", err=>console.log(err));
+
 
 // error handling
 app.use(function(err, req, res, next){
