@@ -21,7 +21,7 @@ var server = app.listen(8080, function () {
 // error handling
 app.use(function(err, req, res, next){
   console.error(err.stack);
-  res.status(500).send('Something bad happened!');
+  res.status(500).send(err);
 });
 
 /*
