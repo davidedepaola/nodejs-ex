@@ -10,7 +10,7 @@ app.get('/', function (req, res) {
 app.post('/submit-student-data', function (req, res) {
     var name = req.body.firstName + ' ' + req.body.lastName;
     
-    res.send(name + ' Submitted Successfully!');
+    res.send(name + ' - Submitted Successfully!');
 });
 
 var server = app.listen(8080, function () {
